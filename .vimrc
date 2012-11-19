@@ -19,3 +19,8 @@ let mapleader = ","
 set grepprg=grep\ -nH\ $*
 
 let g:tex_flavor='latex'
+
+nmap <silent> <A-Up> :wincmd k<CR>
+nmap <silent> <A-Down> :wincmd j<CR>
+nmap <silent> <A-Left> :wincmd h<CR>
+nmap <silent> <A-Right> :wincmd l<CR>
