@@ -19,6 +19,7 @@ let mapleader = ","
 set grepprg=grep\ -nH\ $*
 
 let g:tex_flavor='latex'
+let g:Tex_DefaultTargetFormat='pdf'
 
 nmap <silent> <A-Up> :wincmd k<CR>
 nmap <silent> <A-Down> :wincmd j<CR>
