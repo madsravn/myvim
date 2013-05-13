@@ -1,4 +1,4 @@
-call pathogen#infect()
+execute pathogen#infect()
 syntax on
 filetype plugin indent on
 colorscheme wombat
@@ -14,6 +14,10 @@ set encoding=utf-8
 set autoindent
 set showmode
 set showcmd
+
+" Powerline stuff
+set laststatus=2
+let g:Powerline_symbols = 'fancy'
 
 set nocompatible
 set backspace=indent,eol,start
