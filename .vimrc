@@ -9,11 +9,16 @@ set shiftwidth=4
 set softtabstop=4
 set expandtab
 
+" unsearch
+nnoremap <C-l> :nohl<CR><C-l>
+
 set guifont=Anonymous\ Pro\ 10
 set encoding=utf-8
 set autoindent
 set showmode
 set showcmd
+set relativenumber
+set number
 
 " Powerline stuff
 set laststatus=2
@@ -35,9 +40,16 @@ if &t_Co > 2 || has("gui_running")
     set hlsearch
 endif
 
+" grouping because of the vim 7.4 hybrid mode
 if has("autocmd")
-    autocmd InsertEnter * :set number
-    autocmd InsertLeave * :set relativenumber
+    augroup insert
+        autocmd InsertEnter * :set number
+        autocmd InsertEnter * :set norelativenumber
+    augroup END
+    augroup noinsert
+        autocmd InsertLeave * :set relativenumber
+        autocmd InsertLeave * :set nonumber
+    augroup END
 endif
 set grepprg=grep\ -nH\ $*
 
